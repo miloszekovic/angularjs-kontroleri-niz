@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>angular.js basics, kontroleri i prolazak kroz niz</title>
+  </head>
+  <body ng-app="myApp">
+
+
+    <div ng-controller="myControler">
+
+      <p>Prikazuje niz: {{ niz[0] }} <input type="checkbox" name="" value="" ng-model="isFalse"></p>
+      <ul ng-show="isFalse">
+        <li ng-repeat="clan in niz">{{ clan }}</li>
+      </ul>
+
+      <ul>
+        <li ng-repeat="covek in persons">{{ covek.name }}, ima {{ covek.age }} godina i voli {{ covek.voli }}</li>
+      </ul>
+    </div>
+
+
+    <div ng-controller="nekiTestKontroler">
+      <ul>
+        <li ng-repeat="klubovi in gradovi">{{ klubovi.club }} je iz grada: <input type="checkbox" ng-model="izaberiGrad"> <span ng-show="izaberiGrad">{{ klubovi.name }}</span> - drzava: <input type="checkbox" ng-model="izaberiDrzavu"> <span ng-show="izaberiDrzavu">{{ klubovi.contry }}</span></li>
+      </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js" charset="utf-8"></script>
+    <script src="./app/app.js" charset="utf-8"></script>
+
+    </script>
+  </body>
+</html>
